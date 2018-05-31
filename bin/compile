@@ -32,7 +32,7 @@ function indent() {
 }
 
 MONO_VERSION=`cat $BUILDPACK_DIR/latest`
-MONO_TYPE="minimal"
+MONO_TYPE="full"
 
 if [[ -f $BUILD_DIR/.mono ]]; then
   source $BUILD_DIR/.mono
@@ -151,7 +151,7 @@ else
 fi
 
 topic "Compiling .NET application"
-msbuild /property:Configuration=Release /property:OutDir=$BUILD_DIR/ $SLN
+xbuild /property:Configuration=Release /property:OutDir=$BUILD_DIR/ $SLN
 
 if $MONO_FALLBACK; then
   warn "Mono $MONO_VERSION-$MONO_TYPE failed to install. Mono v4.2.1-$MONO_TYPE was installed instead." 
