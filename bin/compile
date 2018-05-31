@@ -62,8 +62,8 @@ else
   rm -rf $MONO_CACHE_DIR/*
   topic "Installing mono version $MONO_VERSION-$MONO_TYPE"
 
-  MONO_URL="https://github.com/AdamBurgess/heroku-buildpack-mono/releases/download/$MONO_VERSION/mono-$MONO_TYPE.tar.xz"
-  FALLBACK_URL="https://github.com/AdamBurgess/heroku-buildpack-mono/releases/download/mono-4.2.2.30/mono-$MONO_TYPE.tar.xz"
+  MONO_URL="https://github.com/mono/mono/archive/mono-5.10.1.57.tar.gz"
+  FALLBACK_URL="https://github.com/mono/mono/archive/mono-5.10.1.57.tar.gz"
 
   topic "Downloading $MONO_URL"
   curl $MONO_URL -Lfs >$MONO_LOCATION
